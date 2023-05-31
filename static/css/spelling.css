@@ -1,0 +1,118 @@
+body{
+    margin: 0%;
+    padding: 0;
+    background: linear-gradient(360deg,#8e44ad,#2980b9);
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg,#2980b9,#8e44ad);
+
+}
+.navbar h3 a{
+    text-decoration: none;
+    color: white;
+	font-size: 20px;
+	font-weight: 800;
+	margin-left: 30px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px 0;
+    position: relative;
+
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.content{
+    display: flex;   
+    height:900px;
+}
+.content h1{
+    font-size: 35px;
+    margin-top: 10%;
+
+}
+textarea{
+    background-color: white;
+    width: 600px;
+    height: 150px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: black;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;font-size: 20px;
+    border: none;
+
+
+
+}
+button:hover span{
+    width: 100%;
+
+}
+.left{
+    margin-left: 5%;
+}
+.right{
+    margin-top: 4%;
+    margin-left: 6%;
+}
+.right table{
+    font-size: 18px;
+    border-collapse: collapse;
+
+}
+tr {
+  border-bottom: 1pt solid black;
+}
+.right table td{
+    color: white;
+
+}

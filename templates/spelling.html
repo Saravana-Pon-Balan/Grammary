@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/spelling.css')}}">
+</head>
+<body>
+    <div class="navbar">
+        <h3><a href="/">Spelly</a></h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('grammar_checker')}}">Grammar</a></li>
+            <li><a href="{{url_for('summarizer')}}">Summarization</a></li>
+            <li><a href="{{url_for('spelling_checker')}}">Spell_Checker</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="left">
+        <center><h1>Spelling CHECKER</h1></center>
+        <form method='post' action='spelling_checker'>
+        <center><textarea name="text" rows="5" cols="20"></textarea></center>
+        <center><button type="submit"><span></span>Spell Checker</button></center>
+        </form>
+        </div>
+        <div class="right">
+            <center><h2>Result</h2></center>
+            <table cellpadding="10">
+                <tr>
+                    <th>Spell check Result</th>
+                    <td>{%if context%}{{context['corrected_text']}}{%endif%}</td>
+                </tr>
+                 <tr>
+                    <th>Miss spelled Word</th>
+                    <td>{%if context%}{{context['misspelled']}}{%endif%}</td>
+                </tr>
+                 <tr>
+                    <th>Spelling Errors Count</th>
+                    <td>{%if context%}{{context['misspelled_count']}}{%endif%}</td>
+                </tr>
+            </table>
+            
+        </div>  
+    
+    </div>
+</body>
+</html>

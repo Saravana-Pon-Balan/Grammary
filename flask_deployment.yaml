@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grammary
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: grammary
+  template:
+    metadata:
+      labels:
+        app: grammary
+
+    spec:
+      containers:
+        - name: grammary
+          image: us.icr.io/grammary/spelly
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP

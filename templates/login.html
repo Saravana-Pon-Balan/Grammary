@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h3><a href="/">Spelly</a></h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('grammar_checker')}}">Grammar</a></li>
+            <li><a href="{{url_for('summarizer')}}">Summarization</a></li>
+            <li><a href="{{url_for('spelling_checker')}}">Spell_Checker</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+        </ul>
+    </div>
+    <div class="name1">
+        <center><i><h1>Login Now</h1></i></center>
+        {% if failed %}
+    <div class="error">Check Email & password</div>
+    {% endif %}
+    <form method="post" action="/check">
+        <div class="name2">
+            <input type="text" name='email' required>
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div class="name2">
+            <input type="password" name='pass' required>
+            <label>Password</label>
+            <span></span>
+        </div>
+        <input type="submit" value="login">
+        <div class="name4"><a href="#">forgot password?</a>
+        </div>
+        <div class="name5">Don't have an account?Register now!<a href="{{ url_for('register') }}">Register</a>
+        </div>
+    </div>
+    </form>
+
+</body>
+</html>

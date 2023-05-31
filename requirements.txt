@@ -1,0 +1,7 @@
+Flask
+ibm_db
+textblob
+gingerit
+sumy
+numpy
+flask_session

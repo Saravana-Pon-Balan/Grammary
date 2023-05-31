@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style type="text/css">
+body{
+    margin: 0%;
+    padding: 0%;
+    background: white;
+  	background: linear-gradient(180deg,#2980b9, #8e44ad);
+    height: 100vh;
+    border-radius: 5%;
+    height:fit-content;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(360deg,#8e44ad,#2980b9);
+
+}
+.navbar h3 a{
+    text-decoration: none;
+    color: white;
+	font-size: 20px;
+	font-weight: 800;
+	margin-left: 30px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px 0;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+
+
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+.container{
+	display: flex;
+}
+.homeimg{
+	margin: 100px;
+}
+img{
+	border-radius: 20px;
+	width: 400px;
+	height: 375px;
+}
+.para{
+	width: 40%;
+	height: 20%;
+	background: White;
+	border-radius: 20px;
+	margin-top: 100px;
+	padding: 20px;
+}
+.para h3{
+	text-align: center;
+}
+</style>
+<body>
+   <div class="navbar">
+        <h3><a href="/">Spelly</a></h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('grammar_checker')}}">Grammar</a></li>
+            <li><a href="{{url_for('summarizer')}}">Summarization</a></li>
+            <li><a href="{{url_for('spelling_checker')}}">Spell_Checker</a></li>
+            {% if value %}
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+            {%else%}
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            {%endif%}
+        </ul>
+    </div>
+   <div class="container">
+   		<div class="homeimg">
+   			<img src="{{ url_for('static', filename='images/home.jpg') }}">
+   		</div>
+   		<div class="para">
+   			<h3>Welcome to Spelly!</h3>
+   			<p>Enhance your writing with our advanced spelling and grammar checker. Whether you're a student, professional, or anyone who values error-free communication, Spelly is here to help you polish your text to perfection.</p>
+
+			<b>With Spelly, you can:</b>
+
+		    <ul>
+		    	<li>
+		    Eliminate spelling mistakes: Our intelligent algorithm detects and corrects spelling errors, ensuring your writing is accurate and professional.</li>
+		    <li>
+		    Improve grammar and punctuation: Say goodbye to grammar gaffes and punctuation blunders. Spelly analyzes your text and provides suggestions for improved clarity and correctness.</li>
+		   	</ul>
+   		</div>
+   </div>
+</body>
+</html>

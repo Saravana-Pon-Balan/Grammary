@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register from</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="navbar">
+        <h3><a href="/">Spelly</a></h3>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{url_for('grammar_checker')}}">Grammar</a></li>
+            <li><a href="{{url_for('summarizer')}}">Summarization</a></li>
+            <li><a href="{{url_for('spelling_checker')}}">Spell_Checker</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+        </ul>
+    </div>
+     <div class="name1">
+        <center><i><h1>Register Now</h1></i></center>
+        {% if msg %}
+    <div class="error">{{ msg }}</div>
+    {% endif %}
+    <form method="post" action="/save">
+        <div class="name2">
+            <input type="text" name='name' required>
+            <span></span>
+            <label>UserName</label>
+        </div>
+        <div class="name2">
+            <input type="text" name='email' required>
+            <span></span>
+            <label>Email</label>
+        </div>
+        <div class="name2">
+            <input type="password" name='pass' required>
+            <span></span>
+            <label>Password</label>
+        </div>
+        <input type="submit" value="REGISTER">
+        <div class="name4"><a href="#">forgot password?</a>
+        </div>
+        <div class="name5">Already have an account?<a href="{{ url_for('login') }}">Login here</a>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
